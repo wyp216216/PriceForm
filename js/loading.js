@@ -1,0 +1,22 @@
+$(function(){
+	(function(){
+		$.ajax({
+		url:'php/load.php',
+		type:'POST',
+		success:function(e){
+			if(e==false&&e==""){
+				window.location.href='login.html';
+			}else{
+				$('body').load("index_content.html");
+			}
+		},
+		error:function(e){
+			console.log('error!');
+		}
+		})
+	}());
+	$('.navbar').click(function(){
+		console.log('ok');
+	})	
+})
+
